@@ -14,6 +14,13 @@ from .models import Room
 logger = logging.getLogger("django")
 
 
+class HomeView(View):
+    template_name = 'chat/base.html'
+
+    def get(self, request, *args, **kwargs):
+        return render(request, self.template_name, {})
+
+
 class AboutView(View):
     template_name = 'chat/about.html'
 
