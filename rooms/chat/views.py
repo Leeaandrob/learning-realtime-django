@@ -18,7 +18,10 @@ class HomeView(View):
     template_name = 'chat/base.html'
 
     def get(self, request, *args, **kwargs):
-        return render(request, self.template_name, {})
+        return render(request, self.template_name, {
+            "rooms": Room.objects.all()
+        }
+        )
 
 
 class AboutView(View):
